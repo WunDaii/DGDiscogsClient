@@ -1,0 +1,710 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8509FE7D1E244CEB00C7CED7 /* DGDiscogsImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509FE751E21D3BD00C7CED7 /* DGDiscogsImages.swift */; };
+		OBJ_100 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* SessionDelegate.swift */; };
+		OBJ_101 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* SessionManager.swift */; };
+		OBJ_102 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* TaskDelegate.swift */; };
+		OBJ_103 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Timeline.swift */; };
+		OBJ_104 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Validation.swift */; };
+		OBJ_111 /* DGDiscogsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* DGDiscogsItem.swift */; };
+		OBJ_112 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* RequestHelper.swift */; };
+		OBJ_113 /* BaseTestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* BaseTestFile.swift */; };
+		OBJ_114 /* CompletionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* CompletionHandlers.swift */; };
+		OBJ_115 /* DGDiscogsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* DGDiscogsManager.swift */; };
+		OBJ_116 /* DGDiscogsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* DGDiscogsUtils.swift */; };
+		OBJ_117 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* Extensions.swift */; };
+		OBJ_118 /* DGDiscogsArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* DGDiscogsArtist.swift */; };
+		OBJ_119 /* DGDiscogsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* DGDiscogsImage.swift */; };
+		OBJ_120 /* DGDiscogsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* DGDiscogsLabel.swift */; };
+		OBJ_121 /* DGDiscogsMasterRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* DGDiscogsMasterRelease.swift */; };
+		OBJ_122 /* DGDiscogsRelease-Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* DGDiscogsRelease-Artist.swift */; };
+		OBJ_123 /* DGDiscogsRelease-Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* DGDiscogsRelease-Community.swift */; };
+		OBJ_124 /* DGDiscogsRelease-Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* DGDiscogsRelease-Format.swift */; };
+		OBJ_125 /* DGDiscogsRelease-Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* DGDiscogsRelease-Identifier.swift */; };
+		OBJ_126 /* DGDiscogsRelease-Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* DGDiscogsRelease-Rating.swift */; };
+		OBJ_127 /* DGDiscogsRelease-Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* DGDiscogsRelease-Track.swift */; };
+		OBJ_128 /* DGDiscogsRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* DGDiscogsRelease.swift */; };
+		OBJ_129 /* DGDiscogsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* DGDiscogsSearch.swift */; };
+		OBJ_130 /* DGDiscogsVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* DGDiscogsVideo.swift */; };
+		OBJ_131 /* DGDiscogsListing-Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* DGDiscogsListing-Condition.swift */; };
+		OBJ_132 /* DGDiscogsListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* DGDiscogsListing.swift */; };
+		OBJ_133 /* DGDiscogsOrder-Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* DGDiscogsOrder-Message.swift */; };
+		OBJ_134 /* DGDiscogsOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* DGDiscogsOrder.swift */; };
+		OBJ_135 /* DGDiscogsUser-Collection-Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* DGDiscogsUser-Collection-Field.swift */; };
+		OBJ_136 /* DGDiscogsUser-Collection-Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* DGDiscogsUser-Collection-Folder.swift */; };
+		OBJ_137 /* DGDiscogsUser-Collection-Item-Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* DGDiscogsUser-Collection-Item-Note.swift */; };
+		OBJ_138 /* DGDiscogsUser-Collection-Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* DGDiscogsUser-Collection-Item.swift */; };
+		OBJ_139 /* DGDiscogsUser-Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* DGDiscogsUser-Collection.swift */; };
+		OBJ_140 /* DGDiscogsUser-Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* DGDiscogsUser-Submissions.swift */; };
+		OBJ_141 /* DGDiscogsUser-Wantlist-Want.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* DGDiscogsUser-Wantlist-Want.swift */; };
+		OBJ_142 /* DGDiscogsUser-Wantlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* DGDiscogsUser-Wantlist.swift */; };
+		OBJ_143 /* DGDiscogsUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* DGDiscogsUser.swift */; };
+		OBJ_145 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* SwiftyJSON.framework */; };
+		OBJ_146 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* Alamofire.framework */; };
+		OBJ_81 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SwiftyJSON.swift */; };
+		OBJ_88 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* AFError.swift */; };
+		OBJ_89 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Alamofire.swift */; };
+		OBJ_90 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* DispatchQueue+Alamofire.swift */; };
+		OBJ_91 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* MultipartFormData.swift */; };
+		OBJ_92 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* NetworkReachabilityManager.swift */; };
+		OBJ_93 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Notifications.swift */; };
+		OBJ_94 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ParameterEncoding.swift */; };
+		OBJ_95 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Request.swift */; };
+		OBJ_96 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Response.swift */; };
+		OBJ_97 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* ResponseSerialization.swift */; };
+		OBJ_98 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* Result.swift */; };
+		OBJ_99 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* ServerTrustPolicy.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		854476BB1E116018009F824D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_76;
+			remoteInfo = SwiftyJSON;
+		};
+		854476BC1E116018009F824D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_83;
+			remoteInfo = Alamofire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8509FE751E21D3BD00C7CED7 /* DGDiscogsImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGDiscogsImages.swift; sourceTree = "<group>"; };
+		OBJ_11 /* AFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		OBJ_13 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		OBJ_14 /* MultipartFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		OBJ_15 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		OBJ_16 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		OBJ_17 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		OBJ_19 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		OBJ_20 /* ResponseSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		OBJ_21 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		OBJ_22 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		OBJ_23 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		OBJ_24 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		OBJ_25 /* TaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		OBJ_26 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		OBJ_27 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		OBJ_30 /* DGDiscogsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsItem.swift; sourceTree = "<group>"; };
+		OBJ_32 /* DGDiscogsArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsArtist.swift; sourceTree = "<group>"; };
+		OBJ_33 /* DGDiscogsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsImage.swift; sourceTree = "<group>"; };
+		OBJ_34 /* DGDiscogsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsLabel.swift; sourceTree = "<group>"; };
+		OBJ_35 /* DGDiscogsMasterRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsMasterRelease.swift; sourceTree = "<group>"; };
+		OBJ_36 /* DGDiscogsRelease-Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsRelease-Artist.swift"; sourceTree = "<group>"; };
+		OBJ_37 /* DGDiscogsRelease-Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsRelease-Community.swift"; sourceTree = "<group>"; };
+		OBJ_38 /* DGDiscogsRelease-Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsRelease-Format.swift"; sourceTree = "<group>"; };
+		OBJ_39 /* DGDiscogsRelease-Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsRelease-Identifier.swift"; sourceTree = "<group>"; };
+		OBJ_40 /* DGDiscogsRelease-Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsRelease-Rating.swift"; sourceTree = "<group>"; };
+		OBJ_41 /* DGDiscogsRelease-Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsRelease-Track.swift"; sourceTree = "<group>"; };
+		OBJ_42 /* DGDiscogsRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsRelease.swift; sourceTree = "<group>"; };
+		OBJ_43 /* DGDiscogsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsSearch.swift; sourceTree = "<group>"; };
+		OBJ_44 /* DGDiscogsVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsVideo.swift; sourceTree = "<group>"; };
+		OBJ_46 /* DGDiscogsListing-Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsListing-Condition.swift"; sourceTree = "<group>"; };
+		OBJ_47 /* DGDiscogsListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsListing.swift; sourceTree = "<group>"; };
+		OBJ_48 /* DGDiscogsOrder-Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsOrder-Message.swift"; sourceTree = "<group>"; };
+		OBJ_49 /* DGDiscogsOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsOrder.swift; sourceTree = "<group>"; };
+		OBJ_51 /* DGDiscogsUser-Collection-Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsUser-Collection-Field.swift"; sourceTree = "<group>"; };
+		OBJ_52 /* DGDiscogsUser-Collection-Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsUser-Collection-Folder.swift"; sourceTree = "<group>"; };
+		OBJ_53 /* DGDiscogsUser-Collection-Item-Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsUser-Collection-Item-Note.swift"; sourceTree = "<group>"; };
+		OBJ_54 /* DGDiscogsUser-Collection-Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsUser-Collection-Item.swift"; sourceTree = "<group>"; };
+		OBJ_55 /* DGDiscogsUser-Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsUser-Collection.swift"; sourceTree = "<group>"; };
+		OBJ_56 /* DGDiscogsUser-Submissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsUser-Submissions.swift"; sourceTree = "<group>"; };
+		OBJ_57 /* DGDiscogsUser-Wantlist-Want.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsUser-Wantlist-Want.swift"; sourceTree = "<group>"; };
+		OBJ_58 /* DGDiscogsUser-Wantlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DGDiscogsUser-Wantlist.swift"; sourceTree = "<group>"; };
+		OBJ_59 /* DGDiscogsUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsUser.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_61 /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
+		OBJ_63 /* BaseTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestFile.swift; sourceTree = "<group>"; };
+		OBJ_64 /* CompletionHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionHandlers.swift; sourceTree = "<group>"; };
+		OBJ_65 /* DGDiscogsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsManager.swift; sourceTree = "<group>"; };
+		OBJ_66 /* DGDiscogsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsUtils.swift; sourceTree = "<group>"; };
+		OBJ_67 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		OBJ_69 /* DGDiscogsHelper.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = DGDiscogsHelper.xcworkspace; sourceTree = SOURCE_ROOT; };
+		OBJ_70 /* DGDiscogsHelperTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DGDiscogsHelperTests; sourceTree = SOURCE_ROOT; };
+		OBJ_71 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = SOURCE_ROOT; };
+		OBJ_73 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_74 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_75 /* DGDiscogsHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DGDiscogsHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_105 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_144 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_145 /* SwiftyJSON.framework in Frameworks */,
+				OBJ_146 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_10 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* AFError.swift */,
+				OBJ_12 /* Alamofire.swift */,
+				OBJ_13 /* DispatchQueue+Alamofire.swift */,
+				OBJ_14 /* MultipartFormData.swift */,
+				OBJ_15 /* NetworkReachabilityManager.swift */,
+				OBJ_16 /* Notifications.swift */,
+				OBJ_17 /* ParameterEncoding.swift */,
+				OBJ_18 /* Request.swift */,
+				OBJ_19 /* Response.swift */,
+				OBJ_20 /* ResponseSerialization.swift */,
+				OBJ_21 /* Result.swift */,
+				OBJ_22 /* ServerTrustPolicy.swift */,
+				OBJ_23 /* SessionDelegate.swift */,
+				OBJ_24 /* SessionManager.swift */,
+				OBJ_25 /* TaskDelegate.swift */,
+				OBJ_26 /* Timeline.swift */,
+				OBJ_27 /* Validation.swift */,
+			);
+			name = Alamofire;
+			path = "Packages/Alamofire-4.2.0/Source";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_28 /* DGDiscogsHelper */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_29 /* Entities */,
+				OBJ_60 /* RequestHelpers */,
+				OBJ_62 /* Utilities */,
+			);
+			name = DGDiscogsHelper;
+			path = Source/DGDiscogsHelper;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_29 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* DGDiscogsItem.swift */,
+				OBJ_31 /* Database */,
+				OBJ_45 /* Marketplace */,
+				OBJ_50 /* User */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		OBJ_31 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_32 /* DGDiscogsArtist.swift */,
+				8509FE751E21D3BD00C7CED7 /* DGDiscogsImages.swift */,
+				OBJ_33 /* DGDiscogsImage.swift */,
+				OBJ_34 /* DGDiscogsLabel.swift */,
+				OBJ_42 /* DGDiscogsRelease.swift */,
+				OBJ_35 /* DGDiscogsMasterRelease.swift */,
+				OBJ_36 /* DGDiscogsRelease-Artist.swift */,
+				OBJ_37 /* DGDiscogsRelease-Community.swift */,
+				OBJ_38 /* DGDiscogsRelease-Format.swift */,
+				OBJ_39 /* DGDiscogsRelease-Identifier.swift */,
+				OBJ_40 /* DGDiscogsRelease-Rating.swift */,
+				OBJ_41 /* DGDiscogsRelease-Track.swift */,
+				OBJ_43 /* DGDiscogsSearch.swift */,
+				OBJ_44 /* DGDiscogsVideo.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		OBJ_45 /* Marketplace */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_46 /* DGDiscogsListing-Condition.swift */,
+				OBJ_47 /* DGDiscogsListing.swift */,
+				OBJ_48 /* DGDiscogsOrder-Message.swift */,
+				OBJ_49 /* DGDiscogsOrder.swift */,
+			);
+			path = Marketplace;
+			sourceTree = "<group>";
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_68 /* Tests */,
+				OBJ_69 /* DGDiscogsHelper.xcworkspace */,
+				OBJ_70 /* DGDiscogsHelperTests */,
+				OBJ_71 /* Pods */,
+				OBJ_72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_50 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_59 /* DGDiscogsUser.swift */,
+				OBJ_55 /* DGDiscogsUser-Collection.swift */,
+				OBJ_52 /* DGDiscogsUser-Collection-Folder.swift */,
+				OBJ_51 /* DGDiscogsUser-Collection-Field.swift */,
+				OBJ_53 /* DGDiscogsUser-Collection-Item-Note.swift */,
+				OBJ_54 /* DGDiscogsUser-Collection-Item.swift */,
+				OBJ_56 /* DGDiscogsUser-Submissions.swift */,
+				OBJ_57 /* DGDiscogsUser-Wantlist-Want.swift */,
+				OBJ_58 /* DGDiscogsUser-Wantlist.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		OBJ_60 /* RequestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_61 /* RequestHelper.swift */,
+			);
+			path = RequestHelpers;
+			sourceTree = "<group>";
+		};
+		OBJ_62 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_63 /* BaseTestFile.swift */,
+				OBJ_64 /* CompletionHandlers.swift */,
+				OBJ_65 /* DGDiscogsManager.swift */,
+				OBJ_66 /* DGDiscogsUtils.swift */,
+				OBJ_67 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		OBJ_68 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* SwiftyJSON */,
+				OBJ_10 /* Alamofire */,
+				OBJ_28 /* DGDiscogsHelper */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		OBJ_72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_73 /* SwiftyJSON.framework */,
+				OBJ_74 /* Alamofire.framework */,
+				OBJ_75 /* DGDiscogsHelper.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_8 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* SwiftyJSON.swift */,
+			);
+			name = SwiftyJSON;
+			path = "Packages/SwiftyJSON-3.1.3/Source";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		OBJ_106 /* DGDiscogsHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_107 /* Build configuration list for PBXNativeTarget "DGDiscogsHelper" */;
+			buildPhases = (
+				OBJ_110 /* Sources */,
+				OBJ_144 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_147 /* PBXTargetDependency */,
+				OBJ_148 /* PBXTargetDependency */,
+			);
+			name = DGDiscogsHelper;
+			productName = DGDiscogsHelper;
+			productReference = OBJ_75 /* DGDiscogsHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		OBJ_76 /* SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_77 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildPhases = (
+				OBJ_80 /* Sources */,
+				OBJ_82 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = OBJ_73 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		OBJ_83 /* Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_84 /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildPhases = (
+				OBJ_87 /* Sources */,
+				OBJ_105 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alamofire;
+			productName = Alamofire;
+			productReference = OBJ_74 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "DGDiscogsHelper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				OBJ_76 /* SwiftyJSON */,
+				OBJ_83 /* Alamofire */,
+				OBJ_106 /* DGDiscogsHelper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_110 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_111 /* DGDiscogsItem.swift in Sources */,
+				OBJ_112 /* RequestHelper.swift in Sources */,
+				OBJ_113 /* BaseTestFile.swift in Sources */,
+				OBJ_114 /* CompletionHandlers.swift in Sources */,
+				OBJ_115 /* DGDiscogsManager.swift in Sources */,
+				OBJ_116 /* DGDiscogsUtils.swift in Sources */,
+				OBJ_117 /* Extensions.swift in Sources */,
+				OBJ_118 /* DGDiscogsArtist.swift in Sources */,
+				OBJ_119 /* DGDiscogsImage.swift in Sources */,
+				OBJ_120 /* DGDiscogsLabel.swift in Sources */,
+				OBJ_121 /* DGDiscogsMasterRelease.swift in Sources */,
+				OBJ_122 /* DGDiscogsRelease-Artist.swift in Sources */,
+				OBJ_123 /* DGDiscogsRelease-Community.swift in Sources */,
+				OBJ_124 /* DGDiscogsRelease-Format.swift in Sources */,
+				OBJ_125 /* DGDiscogsRelease-Identifier.swift in Sources */,
+				OBJ_126 /* DGDiscogsRelease-Rating.swift in Sources */,
+				OBJ_127 /* DGDiscogsRelease-Track.swift in Sources */,
+				OBJ_128 /* DGDiscogsRelease.swift in Sources */,
+				OBJ_129 /* DGDiscogsSearch.swift in Sources */,
+				OBJ_130 /* DGDiscogsVideo.swift in Sources */,
+				OBJ_131 /* DGDiscogsListing-Condition.swift in Sources */,
+				OBJ_132 /* DGDiscogsListing.swift in Sources */,
+				OBJ_133 /* DGDiscogsOrder-Message.swift in Sources */,
+				OBJ_134 /* DGDiscogsOrder.swift in Sources */,
+				OBJ_135 /* DGDiscogsUser-Collection-Field.swift in Sources */,
+				OBJ_136 /* DGDiscogsUser-Collection-Folder.swift in Sources */,
+				OBJ_137 /* DGDiscogsUser-Collection-Item-Note.swift in Sources */,
+				OBJ_138 /* DGDiscogsUser-Collection-Item.swift in Sources */,
+				OBJ_139 /* DGDiscogsUser-Collection.swift in Sources */,
+				OBJ_140 /* DGDiscogsUser-Submissions.swift in Sources */,
+				OBJ_141 /* DGDiscogsUser-Wantlist-Want.swift in Sources */,
+				8509FE7D1E244CEB00C7CED7 /* DGDiscogsImages.swift in Sources */,
+				OBJ_142 /* DGDiscogsUser-Wantlist.swift in Sources */,
+				OBJ_143 /* DGDiscogsUser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_81 /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_88 /* AFError.swift in Sources */,
+				OBJ_89 /* Alamofire.swift in Sources */,
+				OBJ_90 /* DispatchQueue+Alamofire.swift in Sources */,
+				OBJ_91 /* MultipartFormData.swift in Sources */,
+				OBJ_92 /* NetworkReachabilityManager.swift in Sources */,
+				OBJ_93 /* Notifications.swift in Sources */,
+				OBJ_94 /* ParameterEncoding.swift in Sources */,
+				OBJ_95 /* Request.swift in Sources */,
+				OBJ_96 /* Response.swift in Sources */,
+				OBJ_97 /* ResponseSerialization.swift in Sources */,
+				OBJ_98 /* Result.swift in Sources */,
+				OBJ_99 /* ServerTrustPolicy.swift in Sources */,
+				OBJ_100 /* SessionDelegate.swift in Sources */,
+				OBJ_101 /* SessionManager.swift in Sources */,
+				OBJ_102 /* TaskDelegate.swift in Sources */,
+				OBJ_103 /* Timeline.swift in Sources */,
+				OBJ_104 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_147 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_76 /* SwiftyJSON */;
+			targetProxy = 854476BB1E116018009F824D /* PBXContainerItemProxy */;
+		};
+		OBJ_148 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_83 /* Alamofire */;
+			targetProxy = 854476BC1E116018009F824D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_108 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = DGDiscogsHelper.xcodeproj/DGDiscogsHelper_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = DGDiscogsHelper;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				TARGET_NAME = DGDiscogsHelper;
+			};
+			name = Debug;
+		};
+		OBJ_109 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = DGDiscogsHelper.xcodeproj/DGDiscogsHelper_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = DGDiscogsHelper;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				TARGET_NAME = DGDiscogsHelper;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = DGDiscogsHelper.xcodeproj/SwiftyJSON_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftyJSON;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				TARGET_NAME = SwiftyJSON;
+			};
+			name = Debug;
+		};
+		OBJ_79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = DGDiscogsHelper.xcodeproj/SwiftyJSON_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftyJSON;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				TARGET_NAME = SwiftyJSON;
+			};
+			name = Release;
+		};
+		OBJ_85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = DGDiscogsHelper.xcodeproj/Alamofire_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Alamofire;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				TARGET_NAME = Alamofire;
+			};
+			name = Debug;
+		};
+		OBJ_86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = DGDiscogsHelper.xcodeproj/Alamofire_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Alamofire;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				TARGET_NAME = Alamofire;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_107 /* Build configuration list for PBXNativeTarget "DGDiscogsHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_108 /* Debug */,
+				OBJ_109 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "DGDiscogsHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_77 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_78 /* Debug */,
+				OBJ_79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_84 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_85 /* Debug */,
+				OBJ_86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

@@ -1,0 +1,46 @@
+{
+    "id": 2464521,
+    "instance_id": 1,
+    "folder_id": 1,
+    "rating": 0,
+    "basic_information": {
+        "id": 2464521,
+        "title": "Information Chase",
+        "year": 2006,
+        "resource_url": "https://api.discogs.com/releases/2464521",
+        "thumb": "https://api-img.discogs.com/vzpYq4_kc52GZFs14c0SCJ0ZE84=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb()/discogs-images/R-2464521-1285519861.jpeg.jpg",
+        "formats": [
+                    {
+                    "qty": "1",
+                    "descriptions": [ "Mini", "EP" ],
+                    "name": "CDr"
+                    }
+                    ],
+        "labels": [
+                   {
+                   "resource_url": "https://api.discogs.com/labels/11647",
+                   "entity_type": "",
+                   "catno": "8BP059",
+                   "id": 11647,
+                   "name": "8bitpeoples"
+                   }
+                   ],
+        "artists": [
+                    {
+                    "id": 103906,
+                    "name": "Bit Shifter",
+                    "join": "",
+                    "resource_url": "https://api.discogs.com/artists/103906",
+                    "anv": "",
+                    "tracks": "",
+                    "role": ""
+                    }
+                    ]
+    },
+    "notes": [
+              {
+              "field_id": 3,
+              "value": "bleep bloop blorp."
+              }
+              ]
+}
