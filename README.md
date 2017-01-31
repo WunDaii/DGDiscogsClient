@@ -1,6 +1,8 @@
 # DGDiscogsClient
 Swift client for the Discogs API.
 
+**_This library is still in development._**
+
 ## Installation
 
 ### CocoaPods (iOS 8+, OS X 10.9+) (Recommended)
@@ -75,4 +77,59 @@ oauthSwift = OAuth1Swift(
 ```
 ### Accessing the Discogs API
 
+#### Overview
+
+Each request on a `DGDiscogs` object returns an `enum` called 'result', that has two possible values: `success` and `failure`.  The `success` value will pass the expected values from the request, whilst the `failure` value typically returns an `NSError`.
+
+##### Examples
+
+```
+        DGDiscogsManager.sharedInstance.getAuthenticatedUser { (result) in
+            
+            switch result {
+                
+            case .success():
+                print("Successful")
+                break
+                
+            case .failure(error: let error):
+                print("There was an error: \(error?.localizedDescription)")
+                break
+                
+            default:
+                break
+            }
+        }
+```
+```
+        let user = DGDiscogsManager.sharedInstance.user
+
+        DGDiscogsManager.sharedInstance.user.getOrders { (result) in
+            
+            switch result {
+                
+            case .success(pagination: _, orders: let orders):
+                
+                guard
+                    let orders = orders
+                    else { return }
+                
+                print("The user has made \(orders.count) orders.")
+                break
+                
+            case .failure(error: let error):
+                print("There was an error: \(error?.localizedDescription)")
+                break
+                
+            default:
+                break
+            }
+            
+        }
+```
+
+### Notes
+
+* You may compare `DGDiscogsItems` using the `==` operator, as this will compare each `item`'s `discogsID` and `itemType` values.
+* In requests where pagination is possible, you may omit the `pagination:` parameter when calling the method. This will default to a `DGDiscogsUtils.Pagination` with 20 items per page for page 1.
 

@@ -15,7 +15,6 @@
 		OBJ_104 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Validation.swift */; };
 		OBJ_111 /* DGDiscogsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* DGDiscogsItem.swift */; };
 		OBJ_112 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* RequestHelper.swift */; };
-		OBJ_113 /* BaseTestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* BaseTestFile.swift */; };
 		OBJ_114 /* CompletionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* CompletionHandlers.swift */; };
 		OBJ_115 /* DGDiscogsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* DGDiscogsManager.swift */; };
 		OBJ_116 /* DGDiscogsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* DGDiscogsUtils.swift */; };
@@ -128,7 +127,6 @@
 		OBJ_59 /* DGDiscogsUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsUser.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_61 /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
-		OBJ_63 /* BaseTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestFile.swift; sourceTree = "<group>"; };
 		OBJ_64 /* CompletionHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionHandlers.swift; sourceTree = "<group>"; };
 		OBJ_65 /* DGDiscogsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsManager.swift; sourceTree = "<group>"; };
 		OBJ_66 /* DGDiscogsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDiscogsUtils.swift; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 		OBJ_62 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_63 /* BaseTestFile.swift */,
 				OBJ_64 /* CompletionHandlers.swift */,
 				OBJ_65 /* DGDiscogsManager.swift */,
 				OBJ_66 /* DGDiscogsUtils.swift */,
@@ -420,7 +417,6 @@
 			files = (
 				OBJ_111 /* DGDiscogsItem.swift in Sources */,
 				OBJ_112 /* RequestHelper.swift in Sources */,
-				OBJ_113 /* BaseTestFile.swift in Sources */,
 				OBJ_114 /* CompletionHandlers.swift in Sources */,
 				OBJ_115 /* DGDiscogsManager.swift in Sources */,
 				OBJ_116 /* DGDiscogsUtils.swift in Sources */,
