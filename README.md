@@ -16,7 +16,7 @@ You can install DGDiscogsClient via CocoaPods by adding to your Podfile:
 
 ### Swift Package Manager 
 
-You can install DGDiscogsClient via the Swift Package Manager by adding to your Package.swift file:
+You can install `DGDiscogsClient` via the [Swift Package Manager](https://swift.org/package-manager/) by adding to your `Package.swift` file:
 
 ```
 import PackageDescription
@@ -34,9 +34,9 @@ let package = Package(
 
 ### Authorization
 
-You must authorise the user with Discogs by using the auth flow provided by OAuthSwiftAlamofire.
+You must authorise the user with Discogs by using the auth flow provided by [OAuthSwiftAlamofire](https://github.com/OAuthSwift/OAuthSwiftAlamofire).
 
-1. Create an OAuth1Swift object with your credentials:
+1. Create an `OAuth1Swift` object with your credentials:
 
 ```
 oauthSwift = OAuth1Swift(
@@ -48,7 +48,7 @@ oauthSwift = OAuth1Swift(
         )
 ```
 
-2. Add the RequestAdapter to DGDiscogsManager:
+2. Add the `RequestAdapter` to `DGDiscogsManager`:
         
 ```
         DGDiscogsManager.sharedInstance.adapter = oauthSwift.requestAdapter
@@ -56,7 +56,7 @@ oauthSwift = OAuth1Swift(
         sessionManager.adapter = oauthSwift.requestAdapter
 ```
         
-3. Authorize with OAuthSwift:
+3. Authorize with `OAuthSwift`:
 
 ```
             let _ = oauthSwift.authorize(
