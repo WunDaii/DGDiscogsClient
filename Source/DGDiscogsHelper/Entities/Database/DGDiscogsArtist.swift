@@ -63,13 +63,18 @@ extension DGDiscogsArtist {
     ///   - completion: Called once the request has been completed.
     public func getReleases(
         for pagination : DGDiscogsUtils.Pagination = DGDiscogsUtils.Pagination(page: 1, perPage: 20),
+        sortedBy sort: DGDiscogsUtils.Sort? = nil,
         completion : @escaping DGDiscogsCompletionHandlers.releasesCompletionHandler)
     {
         guard
             let url: URLConvertible = self.releasesURL ?? resourceURLConvertible(appending: "releases")
             else { return }
         
-        let params = pagination.dictionary
+        var params = pagination.dictionary
+        
+        if let sort = sort {
+            params += sort.dictionary
+        }
         
         RequestHelper.sharedInstance.request(
             url: url,

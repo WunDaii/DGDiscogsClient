@@ -1,16 +1,16 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C14E2DAA6D414466522D3CA28932D10147B6BD3F",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9B8EB6AC656428E595C5723097D64EBAC4FE1B45",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : 9223372036854775807,
-    "C14E2DAA6D414466522D3CA28932D10147B6BD3F" : 9223372036854775807
+    "9B8EB6AC656428E595C5723097D64EBAC4FE1B45" : 9223372036854775807,
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C0290187-C991-41FA-A8F7-5411D5E6E01E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : "DGDiscogsClient\/Packages\/SwiftyJSON-3.1.3\/",
-    "C14E2DAA6D414466522D3CA28932D10147B6BD3F" : "DGDiscogsClient\/"
+    "9B8EB6AC656428E595C5723097D64EBAC4FE1B45" : "DGDiscogsClient\/",
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : "DGDiscogsClient\/Packages\/SwiftyJSON-3.1.3\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "DGDiscogsHelper",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -19,7 +19,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WunDaii\/DGDiscogsClient.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C14E2DAA6D414466522D3CA28932D10147B6BD3F"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9B8EB6AC656428E595C5723097D64EBAC4FE1B45"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SwiftyJSON\/SwiftyJSON.git",
