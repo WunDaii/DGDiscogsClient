@@ -76,6 +76,7 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
             public var basicRelease: DGDiscogsRelease
             public let notes: [Note]?
             public var folder: DGDiscogsUser.Collection.Folder?
+            public let dateAdded: Date?
             public var authenticated: Bool {
                 return folder?.collection?.user.discogsID == DGDiscogsManager.sharedInstance.user.discogsID
             }
@@ -90,6 +91,7 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
                 self.rating = json["rating"].intValue
                 self.basicRelease = DGDiscogsRelease(json: json["basic_information"])
                 self.notes = Note.items(from: json["notes"].array)
+                self.dateAdded = DGDiscogsUtils.date(from: json["date_added"].string)
                 self.folder = folder ?? DGDiscogsManager.sharedInstance.user.collection.folders?.filter({ (folder) -> Bool in
                     return folder.discogsID == folderID
                 }).first ?? DGDiscogsManager.sharedInstance.user.collection.uncategorizedFolder
@@ -109,7 +111,7 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
                 self.basicRelease = release
                 self.notes = Note.items(from: json["notes"].array)
                 self.folder = folder ?? DGDiscogsManager.sharedInstance.user.collection.uncategorizedFolder
-                
+                self.dateAdded = Date()
                 super.init(json: json)
             }
             
