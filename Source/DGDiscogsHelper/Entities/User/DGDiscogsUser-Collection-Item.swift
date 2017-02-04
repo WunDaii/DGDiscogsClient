@@ -49,4 +49,33 @@ extension DGDiscogsUser.Collection.Item {
         })
     }
     
+    public func getFolder(
+        for user: DGDiscogsUser,
+        _ completion: @escaping (_ folder: DGDiscogsUser.Collection.Folder) -> Void)
+    {
+            user.collection.getFolders { (result) in
+                
+                switch result {
+                case .success(folders: let folders):
+                    
+                    guard
+                        let folders = folders,
+                        let index = folders.index(where: { (folder) -> Bool in
+                            return folder.discogsID == self.folderID
+                        })
+                        else {
+                            completion(user.collection.uncategorizedFolder)
+                    }
+                    
+                    completion(folders[index])
+                    
+                    break
+                    
+                case .failure(error: _):
+                    completion(user.collection.uncategorizedFolder)
+                    break
+                }
+                
+        }
+    }
 }

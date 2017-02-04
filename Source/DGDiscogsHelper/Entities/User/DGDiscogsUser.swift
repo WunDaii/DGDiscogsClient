@@ -25,6 +25,16 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
         
         internal var fields: [Field]?
         
+        public var uncategorizedFolder: Folder? {
+            
+            guard
+                let index = folders?.index(where: { (folder) -> Bool in
+                return folder.discogsID == 1
+            })
+                else { return nil }
+            return folders?[index]
+        }
+        
         /// The monetary value of the collection.
         public struct Value {
             
@@ -49,12 +59,6 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
         public var allFolder: Folder? {
             return folders?.filter({ (folder) -> Bool in
                 return folder.discogsID == 0
-            }).first
-        }
-        
-        public var uncategorizedFolder: Folder? {
-            return folders?.filter({ (folder) -> Bool in
-                return folder.discogsID == 1
             }).first
         }
         
