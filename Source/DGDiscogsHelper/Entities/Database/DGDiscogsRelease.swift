@@ -82,6 +82,7 @@ public class DGDiscogsRelease: DGDiscogsItem {
         self.format = json["format"].string ?? (json["format"].arrayObject as? [String])?.joined(separator: ", ")
         self.labels = DGDiscogsLabel.items(from: json["labels"].array)
         self.identifiers = Identifier.items(from: json["identifiers"].array)
+        self.userRating_ = json["rating"].int
         
         super.init(json: json)
     }
@@ -132,15 +133,13 @@ extension DGDiscogsRelease {
         for user: DGDiscogsUser,
         completion: @escaping DGDiscogsCompletionHandlers.userReleaseRatingCompletionHandler)
     {
-        guard
-            let userRating = userRating,
-            !refresh
-            else {
-                completion(.success(rating: self.userRating))
-                return
+        if let userRating = userRating,
+            !refresh {
+            completion(.success(rating: userRating))
+            return
         }
         
-        let path = "releases/\(self.discogsID)/rating/\(user.username)"
+        let path = "releases/\(self.discogsID!)/rating/\(user.username!)"
         
         RequestHelper.sharedInstance.request(
             url: path,
@@ -157,7 +156,7 @@ extension DGDiscogsRelease {
                     return
                 }
                 
-                self.set(userRating: json["rating"].int ?? 0)
+                self.set(userRating: json["rating"].int)
                 
                 completion(.success(rating: self.userRating))
         })
@@ -175,7 +174,7 @@ extension DGDiscogsRelease {
         for user: DGDiscogsUser,
         completion: @escaping DGDiscogsCompletionHandlers.userReleaseRatingCompletionHandler)
     {
-        let path = "releases/\(self.discogsID)/rating/\(user.username)",
+        let path = "releases/\(self.discogsID!)/rating/\(user.username!)",
         params: [String : Any] = ["release_id" : self.discogsID,
                                   "username" : user.username,
                                   "rating" : rating]
@@ -200,7 +199,7 @@ extension DGDiscogsRelease {
                     json["release"].int == self.discogsID
                     else { return }
                 
-                self.set(userRating: json["rating"].int ?? 0)
+                self.set(userRating: json["rating"].int)
                 
                 completion(.success(rating: rating))
         })
@@ -216,7 +215,7 @@ extension DGDiscogsRelease {
         for user: DGDiscogsUser,
         completion: @escaping DGDiscogsCompletionHandlers.userReleaseRatingCompletionHandler) {
         
-        let path = "releases/\(self.discogsID)/rating/\(user.username)",
+        let path = "releases/\(self.discogsID!)/rating/\(user.username!)",
         params: [String : Any] = ["release_id" : self.discogsID,
                                   "username" : user.username]
         
@@ -236,7 +235,8 @@ extension DGDiscogsRelease {
                     return
                 }
                 
-                completion(.success(rating: 0))
+                self.set(userRating: nil)
+                completion(.success(rating: nil))
         })
     }
     
