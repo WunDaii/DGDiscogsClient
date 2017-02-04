@@ -38,7 +38,12 @@ public final class DGDiscogsCompletionHandlers {
         case failure(error: NSError?)
     }
     
-    public enum ReleaseRatingResultType {
+    public enum UserReleaseRatingResultType {
+        case success(rating: Int?)
+        case failure(error: NSError?)
+    }
+    
+    public enum CommunityReleaseRatingResultType {
         case success(rating: Double?)
         case failure(error: NSError?)
     }
@@ -148,7 +153,8 @@ public final class DGDiscogsCompletionHandlers {
 
     public typealias releasesCompletionHandler = (_ result: ReleasesResultType) -> Void
     public typealias masterVersionsCompletionHandler = (_ result: MasterVersionsResultType) -> Void
-    public typealias releaseRatingCompletionHandler = (_ result: ReleaseRatingResultType) -> Void
+    public typealias userReleaseRatingCompletionHandler = (_ result: UserReleaseRatingResultType) -> Void
+    public typealias communityReleaseRatingCompletionHandler = (_ result: CommunityReleaseRatingResultType) -> Void
     public typealias masterReleaseCompletionHandler = (_ result: MasterReleaseResultType) -> Void
 
     public typealias searchCompletionHandler = (_ result: SearchResultType) -> Void

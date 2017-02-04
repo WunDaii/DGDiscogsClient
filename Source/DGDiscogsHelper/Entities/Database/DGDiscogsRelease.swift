@@ -46,6 +46,10 @@ public class DGDiscogsRelease: DGDiscogsItem {
     public let community: Community
     public var communityRating: Double?
     public var communityRatingCount: Int?
+    private var userRating_: Int? = nil
+    public var userRating: Int? {
+        return userRating_
+    }
     public var collectionItems: [DGDiscogsUser.Collection.Item]? = nil
     
     required public init(json: JSON) {
@@ -85,6 +89,10 @@ public class DGDiscogsRelease: DGDiscogsItem {
     class func items(from array: [JSON]?) -> [DGDiscogsRelease]? {
         return super.items(from: array) as? [DGDiscogsRelease]
     }
+    
+    internal func set(userRating: Int?) {
+        self.userRating_ = userRating
+    }
 }
 
 extension DGDiscogsRelease {
@@ -120,9 +128,18 @@ extension DGDiscogsRelease {
     ///   - user: The user of the rating you are trying to request.
     ///   - completion: Called when the request has been completed.
     public func getRating(
+        refresh: Bool = false,
         for user: DGDiscogsUser,
-        completion: @escaping DGDiscogsCompletionHandlers.releaseRatingCompletionHandler)
+        completion: @escaping DGDiscogsCompletionHandlers.userReleaseRatingCompletionHandler)
     {
+        guard
+            let userRating = userRating,
+            !refresh
+            else {
+                completion(.success(rating: self.userRating))
+                return
+        }
+        
         let path = "releases/\(self.discogsID)/rating/\(user.username)"
         
         RequestHelper.sharedInstance.request(
@@ -139,10 +156,10 @@ extension DGDiscogsRelease {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
                 
-                let rating = json["rating"].double
-                completion(.success(rating: rating))
+                self.set(userRating: json["rating"].int ?? 0)
+                
+                completion(.success(rating: self.userRating))
         })
     }
     
@@ -154,9 +171,9 @@ extension DGDiscogsRelease {
     ///   - user: The user of the rating you are trying to request.
     ///   - completion: Called when the request has been completed.
     public func addRating(
-        rating: Double,
+        rating: Int,
         for user: DGDiscogsUser,
-        completion: @escaping DGDiscogsCompletionHandlers.releaseRatingCompletionHandler)
+        completion: @escaping DGDiscogsCompletionHandlers.userReleaseRatingCompletionHandler)
     {
         let path = "releases/\(self.discogsID)/rating/\(user.username)",
         params: [String : Any] = ["release_id" : self.discogsID,
@@ -177,13 +194,13 @@ extension DGDiscogsRelease {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
                 
                 guard
-                    json["rating"].double == rating,
                     json["username"].string == user.username,
                     json["release"].int == self.discogsID
                     else { return }
+                
+                self.set(userRating: json["rating"].int ?? 0)
                 
                 completion(.success(rating: rating))
         })
@@ -197,7 +214,7 @@ extension DGDiscogsRelease {
     ///   - completion: Called when the request has been completed.
     public func removeRating(
         for user: DGDiscogsUser,
-        completion: @escaping DGDiscogsCompletionHandlers.releaseRatingCompletionHandler) {
+        completion: @escaping DGDiscogsCompletionHandlers.userReleaseRatingCompletionHandler) {
         
         let path = "releases/\(self.discogsID)/rating/\(user.username)",
         params: [String : Any] = ["release_id" : self.discogsID,
@@ -218,10 +235,8 @@ extension DGDiscogsRelease {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
                 
-                let rating = json["rating"].double
-                completion(.success(rating: rating))
+                completion(.success(rating: 0))
         })
     }
     
@@ -229,7 +244,7 @@ extension DGDiscogsRelease {
     ///
     /// - Parameter completion: Called when the request has been completed.
     public func getCommunityRating(
-        completion: @escaping DGDiscogsCompletionHandlers.releaseRatingCompletionHandler)
+        completion: @escaping DGDiscogsCompletionHandlers.communityReleaseRatingCompletionHandler)
     {
         let path = "releases/\(self.discogsID)/rating",
         params: [String : Any] = ["number" : self.discogsID]
@@ -249,7 +264,6 @@ extension DGDiscogsRelease {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
                 
                 self.communityRating = json["rating"]["average"].double
                 self.communityRatingCount = json["rating"]["count"].int
@@ -265,9 +279,9 @@ extension DGDiscogsRelease {
         
         if let folder = folder {
             
-                folder.add(self, completion: { (result) in
-                    completion(result)
-                })
+            folder.add(self, completion: { (result) in
+                completion(result)
+            })
             
         } else {
             
