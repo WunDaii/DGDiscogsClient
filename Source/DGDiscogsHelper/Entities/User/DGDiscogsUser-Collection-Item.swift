@@ -20,6 +20,7 @@ extension DGDiscogsUser.Collection.Item {
     /// - Precondition: Authentication as the collection item owner is required.
     public func edit(
         note: Note,
+        value: String? = nil,
         completion: @escaping DGDiscogsCompletionHandlers.editCompletionHandler) {
         
         guard
@@ -27,7 +28,7 @@ extension DGDiscogsUser.Collection.Item {
             let url: URLConvertible = DGDiscogsManager.sharedInstance.user.resourcePath?.appending("collection/folders/\(self.folder?.discogsID ?? 1)/releases/\(releaseID)/instances/\(self.instanceID)/fields")
             else { return }
         
-        let params = note.dictionary
+        let params = ["value" : value]
         
         RequestHelper.sharedInstance.request(
             url: url,
@@ -45,13 +46,15 @@ extension DGDiscogsUser.Collection.Item {
                     return
                 }
                 
+                note.set(value: value)
+                
                 completion(.success())
         })
     }
     
     public func getFolder(
         for user: DGDiscogsUser,
-        _ completion: @escaping (_ folder: DGDiscogsUser.Collection.Folder) -> Void)
+        _ completion: @escaping (_ folder: DGDiscogsUser.Collection.Folder?) -> Void)
     {
             user.collection.getFolders { (result) in
                 
@@ -65,6 +68,7 @@ extension DGDiscogsUser.Collection.Item {
                         })
                         else {
                             completion(user.collection.uncategorizedFolder)
+                            return
                     }
                     
                     completion(folders[index])

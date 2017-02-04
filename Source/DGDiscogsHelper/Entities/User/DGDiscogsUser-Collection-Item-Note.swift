@@ -59,16 +59,14 @@ extension DGDiscogsUser.Collection.Item {
         /// - Parameter value: The new value of the note.
         /// - Returns: Whether the `value` is valid and has been successfully set.
         public func validate(_ value: String?) -> Bool {
-            print("validating")
+
             guard let field = field else { return false }
-            print("field exists")
-            let isValid = field.isValid(value)
-            
-            if isValid {
-                value_ = value
-            }
-            
-            return isValid
+
+            return field.isValid(value)
+        }
+        
+        internal func set(value: String?) {
+            value_ = value
         }
         
         public func getField(forUser user: DGDiscogsUser, _ completion: @escaping (_ field: DGDiscogsUser.Collection.Field?) -> Void) {
