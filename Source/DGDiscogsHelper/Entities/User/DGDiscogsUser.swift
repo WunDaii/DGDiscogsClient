@@ -63,21 +63,8 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
         }
         
         init(user: DGDiscogsUser) {
-            
             self.user = user
-            
-            let allFolderJSON = "{ \"id\": 0, \"count\": 0," +
-                "\"name\": \"All\"," +
-            "\"resource_url\": \"https://api.discogs.com/users/\(self.user.username)/collection/folders/0\"}"
-            
-            let uncategorizedFolderJSON = "{ \"id\": 1, \"count\": 0," +
-                "\"name\": \"Uncategorized\"," +
-            "\"resource_url\": \"https://api.discogs.com/users/\(self.user.username)/collection/folders/1\"}"
-            
-            let allFolder = Folder(json: JSON.parse(allFolderJSON), collection: self)
-            let uncategorizedFolder = Folder(json: JSON.parse(uncategorizedFolderJSON), collection: self)
-            
-            self.folders = [allFolder, uncategorizedFolder]
+            self.folders = nil
         }
         
         /// Represents an item in a user's collection folder.
