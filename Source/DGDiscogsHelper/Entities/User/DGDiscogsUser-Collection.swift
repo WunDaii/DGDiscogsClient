@@ -28,6 +28,7 @@ extension DGDiscogsUser.Collection {
         if let folders = folders,
             !refresh {
             completion(.success(folders: folders))
+            return
         }
         
         guard
@@ -49,11 +50,9 @@ extension DGDiscogsUser.Collection {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
                 
-                let folders: [Folder]? = Folder.items(from: json["folders"].array, collection: self)
-                self.folders = folders
-                completion(.success(folders: folders))
+                self.folders = Folder.items(from: json["folders"].array, collection: self)
+                completion(.success(folders: self.folders))
         })
     }
     
