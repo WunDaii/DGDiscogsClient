@@ -38,14 +38,14 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
         /// The monetary value of the collection.
         public struct Value {
             
-            public let maximum: Double
-            public let median: Double
-            public let minimum: Double
+            public let maximum: String?
+            public let median: String?
+            public let minimum: String?
             
             init(json: JSON) {
-                self.maximum = json["maximum"].doubleValue
-                self.median = json["median"].doubleValue
-                self.minimum = json["minimum"].doubleValue
+                self.maximum = json["maximum"].string
+                self.median = json["median"].string
+                self.minimum = json["minimum"].string
             }
         }
         
