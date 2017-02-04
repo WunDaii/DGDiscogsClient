@@ -90,6 +90,7 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
                 self.folderID = folderID
                 self.rating = json["rating"].intValue
                 self.basicRelease = DGDiscogsRelease(json: json["basic_information"])
+                basicRelease.set(userRating: self.rating)
                 self.notes = Note.items(from: json["notes"].array)
                 self.dateAdded = DGDiscogsUtils.date(from: json["date_added"].string)
                 self.folder = folder ?? DGDiscogsManager.sharedInstance.user.collection.folders?.filter({ (folder) -> Bool in
@@ -109,6 +110,7 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
                 self.folderID = json["folder_id"].intValue
                 self.rating = json["rating"].intValue
                 self.basicRelease = release
+                basicRelease.set(userRating: self.rating)
                 self.notes = Note.items(from: json["notes"].array)
                 self.folder = folder ?? DGDiscogsManager.sharedInstance.user.collection.uncategorizedFolder
                 self.dateAdded = Date()

@@ -11,9 +11,6 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-extension DGDiscogsUser.Collection {
-}
-
 // MARK: Network Requests
 extension DGDiscogsUser.Collection.Item {
     
