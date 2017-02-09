@@ -63,7 +63,7 @@ extension DGDiscogsUser.Wantlist {
     }
     
     public func add(
-        want: Want,
+        _ want: Want,
         completion: @escaping DGDiscogsCompletionHandlers.userWantlistAddCompletionHandler)
     {
         guard
@@ -96,7 +96,7 @@ extension DGDiscogsUser.Wantlist {
     }
     
     public func remove(
-        want: Want,
+        _ want: Want,
         completion: @escaping DGDiscogsCompletionHandlers.deleteCompletionHandler)
     {
         guard
