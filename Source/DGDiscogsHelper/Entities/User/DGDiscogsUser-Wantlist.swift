@@ -63,11 +63,11 @@ extension DGDiscogsUser.Wantlist {
     }
     
     public func add(
-        _ want: Want,
+        _ release: DGDiscogsRelease,
         completion: @escaping DGDiscogsCompletionHandlers.userWantlistAddCompletionHandler)
     {
         guard
-            let url: URLConvertible = resourceURLConvertible(appending: String(want.basicRelease.discogsID))
+            let url: URLConvertible = resourceURLConvertible(appending: String(release.discogsID))
             else { return }
         
         let params: [String : Any] = want.dictionary
@@ -96,11 +96,11 @@ extension DGDiscogsUser.Wantlist {
     }
     
     public func remove(
-        _ want: Want,
+        _ release: DGDiscogsRelease,
         completion: @escaping DGDiscogsCompletionHandlers.deleteCompletionHandler)
     {
         guard
-            let url: URLConvertible = resourceURLConvertible(appending: String(want.basicRelease.discogsID))
+            let url: URLConvertible = resourceURLConvertible(appending: String(release.discogsID))
             else { return }
         
         RequestHelper.sharedInstance.request(
