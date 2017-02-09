@@ -69,13 +69,10 @@ extension DGDiscogsUser.Wantlist {
         guard
             let url: URLConvertible = resourceURLConvertible(appending: String(release.discogsID))
             else { return }
-        
-        let params: [String : Any] = want.dictionary
-        
+                
         RequestHelper.sharedInstance.request(
             url: url,
             method: .put,
-            parameters: params,
             
             completion: { (response, json, error) in
                 
@@ -106,7 +103,6 @@ extension DGDiscogsUser.Wantlist {
         RequestHelper.sharedInstance.request(
             url: url,
             method: .delete,
-            parameters: nil,
             expectingStatusCode: 204,
             completion: { (response, json, error) in
                 
