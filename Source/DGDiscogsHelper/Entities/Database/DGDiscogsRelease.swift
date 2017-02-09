@@ -307,7 +307,7 @@ extension DGDiscogsRelease {
     }
     
     public func getCollectionFolders(
-        with pagination: DGDiscogsUtils.Pagination = DGDiscogsUtils.Pagination(page: 1, perPage: 100),
+        with pagination: DGDiscogsUtils.Pagination = DGDiscogsUtils.Pagination(page: 1, perPage: 50),
         completion : @escaping DGDiscogsCompletionHandlers.userCollectionFolderItemsCompletionHandler)
     {
         DGDiscogsManager.sharedInstance.user.collection.getCollectionFolders(for: self, with: pagination) { (result) in

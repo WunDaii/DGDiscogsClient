@@ -109,7 +109,7 @@ public struct DGDiscogsUtils {
         }
         
         static public var defaultPagination: Pagination {
-            return Pagination(page: 1, perPage: 20)
+            return Pagination(page: 1, perPage: 50)
         }
     }
     

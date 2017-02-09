@@ -144,7 +144,7 @@ extension DGDiscogsUser.Collection {
     ///   - completion: Called once the request has been completed.
     public func getCollectionFolders(
         for release: DGDiscogsRelease,
-        with pagination: DGDiscogsUtils.Pagination = DGDiscogsUtils.Pagination(page: 1, perPage: 100),
+        with pagination: DGDiscogsUtils.Pagination = DGDiscogsUtils.Pagination(page: 1, perPage: 50),
         completion : @escaping DGDiscogsCompletionHandlers.userCollectionFolderItemsCompletionHandler)
     {
         

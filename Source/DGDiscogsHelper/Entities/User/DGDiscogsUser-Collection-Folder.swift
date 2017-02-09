@@ -166,7 +166,7 @@ extension DGDiscogsUser.Collection.Folder {
         completion : @escaping DGDiscogsCompletionHandlers.deleteCompletionHandler) {
         
         guard
-            let url: URLConvertible = resourceURLConvertible(appending: "releases/\(item.basicRelease.discogsID)/instances/\(item.instanceID)")
+            let url: URLConvertible = resourceURLConvertible(appending: "releases/\(item.basicRelease.discogsID!)/instances/\(item.instanceID)")
             else { return }
         
         RequestHelper.sharedInstance.request(
