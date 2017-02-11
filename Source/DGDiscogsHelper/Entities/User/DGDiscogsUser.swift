@@ -215,7 +215,7 @@ public class DGDiscogsUser: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
     
     override var resourcePath : String? {
         get {
-            return "users/\(username)"
+            return "users/\(username!)/"
         }
     }
     
