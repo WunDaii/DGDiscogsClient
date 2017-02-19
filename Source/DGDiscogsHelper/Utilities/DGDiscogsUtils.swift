@@ -52,6 +52,17 @@ public struct DGDiscogsUtils {
             self.sortOrder = sortOrder
         }
         
+        public init?(sortBy: String, sortOrder: String) {
+            
+            guard
+            let sortBy = SortBy(rawValue: sortBy),
+                let sortOrder = SortOrder(rawValue: sortOrder)
+                else { return nil }
+
+            self.sortBy = sortBy
+            self.sortOrder = sortOrder
+        }
+        
         public var sortBy : SortBy
         public var sortOrder : SortOrder
         

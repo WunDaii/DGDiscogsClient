@@ -16,7 +16,6 @@ extension DGDiscogsUser.Collection.Item {
     
     /// - Precondition: Authentication as the collection item owner is required.
     public func edit(
-        note: Note,
         field: DGDiscogsUser.Collection.Field,
         value: String? = nil,
         completion: @escaping DGDiscogsCompletionHandlers.editCompletionHandler) {
@@ -44,8 +43,6 @@ extension DGDiscogsUser.Collection.Item {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-                
-                note.set(value: value)
                 
                 completion(.success())
         })
