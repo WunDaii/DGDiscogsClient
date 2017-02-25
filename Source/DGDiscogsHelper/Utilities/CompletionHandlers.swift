@@ -68,9 +68,14 @@ public final class DGDiscogsCompletionHandlers {
     }
     
     // MARK: User
+
+    public enum UserAuthenticationResultType {
+        case success(user: DGDiscogsUser, jsonString: String?)
+        case failure(error : NSError?)
+    }
     
     public enum UserUpdateResultType {
-        case success()
+        case success(user: DGDiscogsUser)
         case failure(error : NSError?)
     }
     
@@ -159,6 +164,7 @@ public final class DGDiscogsCompletionHandlers {
 
     public typealias searchCompletionHandler = (_ result: SearchResultType) -> Void
     
+    public typealias userAuthenticationCompletionHandler = (_ result: UserAuthenticationResultType) -> Void
     public typealias userUpdateCompletionHandler = (_ result: UserUpdateResultType) -> Void
     public typealias userSubmissionsCompletionHandler = (_ result: UserSubmissionsResultType) -> Void
     public typealias userListingsCompletionHandler = (_ result: UserListingsResultType) -> Void

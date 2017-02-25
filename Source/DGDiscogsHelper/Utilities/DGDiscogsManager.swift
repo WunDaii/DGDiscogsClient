@@ -14,23 +14,16 @@ import SwiftyJSON
 public class DGDiscogsManager {
     
     public static let sharedInstance = DGDiscogsManager()
-
+    
     public var user: DGDiscogsUser! = nil
     
     public var adapter = SessionManager.default.adapter
     
     public func getAuthenticatedUser(
-        completion : @escaping DGDiscogsCompletionHandlers.userUpdateCompletionHandler) {
+        setAsMainUser: Bool = false,
+        completion : @escaping DGDiscogsCompletionHandlers.userAuthenticationCompletionHandler) {
         
-        if let json = UserDefaults.standard.object(forKey: "authUserJSON") as? String {
-            
-            self.user = DGDiscogsUser(json: JSON.parse(json))
-            completion(.success())
-            
-            return
-        }
-        
-            let url: URLConvertible = "oauth/identity"
+        let url: URLConvertible = "oauth/identity"
         
         print("Must get auth user")
         
@@ -49,13 +42,15 @@ public class DGDiscogsManager {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
-                UserDefaults.standard.set(json.rawString()!, forKey: "authUserJSON")
                 
-                self.user = DGDiscogsUser(json: json)
+                let user = DGDiscogsUser(json: json)
                 
-                completion(.success())
+                if setAsMainUser {
+                    self.user = user
+                }
+                
+                completion(.success(user: user, jsonString: json.rawString()))
         })
     }
-
+    
 }

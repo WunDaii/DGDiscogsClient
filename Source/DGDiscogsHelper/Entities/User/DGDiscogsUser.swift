@@ -450,7 +450,7 @@ public extension DGDiscogsUser {
                     return
                 }
 
-                completion(.success())
+                completion(.success(user: self))
         })
     }
     
