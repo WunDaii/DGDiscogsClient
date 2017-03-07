@@ -108,6 +108,8 @@ extension DGDiscogsUser.Collection.Item {
                     return
                 }
                 
+                self.folder = folder
+                
                 completion(.success())
         })
     }}
