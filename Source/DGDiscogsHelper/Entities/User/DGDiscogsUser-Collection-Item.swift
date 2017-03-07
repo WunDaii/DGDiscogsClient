@@ -52,6 +52,12 @@ extension DGDiscogsUser.Collection.Item {
         for user: DGDiscogsUser,
         _ completion: @escaping (_ folder: DGDiscogsUser.Collection.Folder?) -> Void)
     {
+        
+        if let folder = folder {
+            completion(folder)
+            return
+        }
+        
         user.collection.getFolders { (result) in
             
             switch result {
@@ -96,14 +102,14 @@ extension DGDiscogsUser.Collection.Item {
             method: .post,
             parameters: params,
             encoding: JSONEncoding.default,
-            expectingStatusCode: 204,
+            expectingStatusCode: 200,
             completion: { (response, json, error) in
                 
                 if let error = error {
                     completion(.failure(error: error))
                 }
                 
-                guard let json = json else {
+                guard let _ = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
