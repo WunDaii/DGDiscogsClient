@@ -78,4 +78,36 @@ extension DGDiscogsUser.Collection.Item {
             
         }
     }
-}
+    
+    /// - Precondition: Authentication as the collection item owner is required.
+    public func moveFolder(
+        to folder: DGDiscogsUser.Collection.Folder,
+        completion: @escaping DGDiscogsCompletionHandlers.editCompletionHandler) {
+        
+        guard
+            let releaseID = basicRelease.discogsID,
+            let url: URLConvertible = DGDiscogsManager.sharedInstance.user.resourcePath?.appending("collection/folders/\(self.folder?.discogsID ?? 1)/releases/\(releaseID)/instances/\(self.instanceID)")
+            else { return }
+        
+        let params = ["folder_id" : folder.discogsID]
+        
+        RequestHelper.sharedInstance.request(
+            url: url,
+            method: .post,
+            parameters: params,
+            encoding: JSONEncoding.default,
+            expectingStatusCode: 204,
+            completion: { (response, json, error) in
+                
+                if let error = error {
+                    completion(.failure(error: error))
+                }
+                
+                guard let json = json else {
+                    completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
+                    return
+                }
+                
+                completion(.success())
+        })
+    }}

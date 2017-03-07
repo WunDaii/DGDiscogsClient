@@ -95,6 +95,8 @@ public class DGDiscogsItem {
             return DGDiscogsArtist(json: json)
         case "label":
             return DGDiscogsLabel(json: json)
+        case "user":
+            return DGDiscogsUser(json: json)
         default:
             return nil;
         }
@@ -112,6 +114,8 @@ public class DGDiscogsItem {
             return "release"
         case is DGDiscogsLabel:
             return "company"
+        case is DGDiscogsUser:
+            return "user"
         default:
             return "item"
         }
@@ -153,5 +157,5 @@ public class DGDiscogsItem {
     static func == (left: DGDiscogsItem, right: DGDiscogsItem) -> Bool {
         return left.discogsID == right.discogsID && left.itemType == right.itemType
     }
-
+    
 }
