@@ -101,6 +101,7 @@ extension DGDiscogsUser.Collection.Folder {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
@@ -141,6 +142,7 @@ extension DGDiscogsUser.Collection.Folder {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
@@ -178,6 +180,7 @@ extension DGDiscogsUser.Collection.Folder {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {

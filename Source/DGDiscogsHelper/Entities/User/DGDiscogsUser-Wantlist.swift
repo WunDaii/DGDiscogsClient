@@ -45,13 +45,13 @@ extension DGDiscogsUser.Wantlist {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
                 
                 let pagination = DGDiscogsUtils.Pagination(json: json["pagination"])
                 
@@ -69,7 +69,7 @@ extension DGDiscogsUser.Wantlist {
         guard
             let url: URLConvertible = resourceURLConvertible(appending: String(release.discogsID))
             else { return }
-                
+        
         RequestHelper.sharedInstance.request(
             url: url,
             method: .put,
@@ -78,13 +78,14 @@ extension DGDiscogsUser.Wantlist {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
+                
                 
                 if let want = DGDiscogsUser.Wantlist.Want(optionalJson: json) {
                     completion(.success(want: want))
@@ -108,13 +109,14 @@ extension DGDiscogsUser.Wantlist {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
+                
                 completion(.success())
         })
     }
@@ -136,15 +138,15 @@ extension DGDiscogsUser.Wantlist {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
                 
-                if response.statusCode == 404 {
+                if response?.statusCode == 404 {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 404, userInfo: nil)))
                 } else {
                     completion(.success())

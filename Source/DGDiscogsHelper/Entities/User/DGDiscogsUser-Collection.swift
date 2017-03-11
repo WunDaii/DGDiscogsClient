@@ -39,11 +39,11 @@ extension DGDiscogsUser.Collection {
             url: url,
             method: .get,
             parameters: nil,
-            
             completion: { (response, json, error) in
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
@@ -77,13 +77,14 @@ extension DGDiscogsUser.Collection {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
+                
                 
                 let collectionValue = Value(json: json)
                 completion(.success(collectionValue: collectionValue))
@@ -121,13 +122,14 @@ extension DGDiscogsUser.Collection {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
+                
                 
                 self.fields = Field.items(from: json["fields"].array)
                 completion(.success(fields: self.fields))
@@ -161,13 +163,14 @@ extension DGDiscogsUser.Collection {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
+                
                 
                 let pagination = DGDiscogsUtils.Pagination(json: json["pagination"])
                 let items: [Item]? = Item.items(from: json["releases"].array)
@@ -202,17 +205,18 @@ extension DGDiscogsUser.Collection {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
                 
-                if response.statusCode == 201 {
-                let folder = Folder(json: json)
-                completion(.success(folder: folder))
+                
+                if response?.statusCode == 201 {
+                    let folder = Folder(json: json)
+                    completion(.success(folder: folder))
                 }
         })
     }

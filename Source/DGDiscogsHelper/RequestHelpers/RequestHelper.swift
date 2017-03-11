@@ -22,7 +22,7 @@ class RequestHelper {
     static let sharedInstance = RequestHelper()
     static let baseURL = URL(string: "https://api.discogs.com/")!
     
-    typealias completionHandler = (_ response : HTTPURLResponse, _ json : JSON?, _ error: NSError?) -> Void
+    typealias completionHandler = (_ response : HTTPURLResponse?, _ json : JSON?, _ error: Error?) -> Void
     
     var discogsAuthInfo : DGDiscogsAuthInfo = DGDiscogsAuthInfo()
     
@@ -58,10 +58,17 @@ class RequestHelper {
         if let parameters = parameters {
             print("Parameters > \(parameters)")
         }
-
+        
         SessionManager.default.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { response in
             
-            guard let httpResponse = response.response else { return }
+            guard
+                let httpResponse = response.response
+                else {
+                    
+                    completion(response.response, nil, response.result.error)
+                    //                    self.responseError(response)
+                    
+                    return }
             
             print("*** GOT RESULT ***")
             print("*** Request > \(response.request)")  // original URL request
@@ -70,15 +77,6 @@ class RequestHelper {
             print("*** Data > \(response.data)")     // server data
             print("*** Result > \(response.result)")   // result of response serialization
             
-            
-            
-//            guard let statusCode = response.response?.statusCode,
-//            statusCode == expectingStatusCode_
-//                else {
-//                print("Request failed > Expecting status code does not match.")
-//                return
-//            }
-            
             switch response.result {
                 
             case .success(let data):
@@ -86,15 +84,58 @@ class RequestHelper {
                 let json = JSON(data)
                 print("- JSON < \(json)")
                 completion(httpResponse, json, nil)
+                break
                 
             case .failure(let error):
                 print("Request failed with error: \(error)")
                 print("Response headers: \(response.response?.allHeaderFields)")
                 
-                completion(httpResponse, nil, NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil))
-
+                completion(httpResponse, nil, error)
+                
                 return
             }
+        }
+    }
+    
+    func responseError(_ response: DataResponse<Any>) {
+        var statusCode = response.response?.statusCode
+        if let error = response.result.error as? AFError {
+            statusCode = error._code // statusCode private
+            switch error {
+            case .invalidURL(let url):
+                print("Invalid URL: \(url) - \(error.localizedDescription)")
+            case .parameterEncodingFailed(let reason):
+                print("Parameter encoding failed: \(error.localizedDescription)")
+                print("Failure Reason: \(reason)")
+            case .multipartEncodingFailed(let reason):
+                print("Multipart encoding failed: \(error.localizedDescription)")
+                print("Failure Reason: \(reason)")
+            case .responseValidationFailed(let reason):
+                print("Response validation failed: \(error.localizedDescription)")
+                print("Failure Reason: \(reason)")
+                
+                switch reason {
+                case .dataFileNil, .dataFileReadFailed:
+                    print("Downloaded file could not be read")
+                case .missingContentType(let acceptableContentTypes):
+                    print("Content Type Missing: \(acceptableContentTypes)")
+                case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+                    print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
+                case .unacceptableStatusCode(let code):
+                    print("Response status code was unacceptable: \(code)")
+                    statusCode = code
+                }
+            case .responseSerializationFailed(let reason):
+                print("Response serialization failed: \(error.localizedDescription)")
+                print("Failure Reason: \(reason)")
+                // statusCode = 3840 ???? maybe..
+            }
+            
+            print("Underlying error: \(error.underlyingError)")
+        } else if let error = response.result.error as? URLError {
+            print("URLError occurred: \(error)")
+        } else {
+            print("Unknown error: \(response.result.error)")
         }
     }
 }

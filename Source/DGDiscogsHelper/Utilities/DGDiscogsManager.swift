@@ -36,6 +36,7 @@ public class DGDiscogsManager {
                 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
                 }
                 
                 guard let json = json else {
