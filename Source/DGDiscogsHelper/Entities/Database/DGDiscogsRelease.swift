@@ -199,7 +199,7 @@ extension DGDiscogsRelease {
                 
                 guard
                     json["username"].string == user.username,
-                    json["release"].int == self.discogsID
+                    json["release_id"].int == self.discogsID
                     else { return }
                 
                 self.set(userRating: json["rating"].int)
