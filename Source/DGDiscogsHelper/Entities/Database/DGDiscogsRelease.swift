@@ -185,6 +185,7 @@ extension DGDiscogsRelease {
             url: path,
             method: .put,
             parameters: params,
+            encoding: JSONEncoding.default,
             completion: { (response, json, error) in
                 
                 if let error = error {
