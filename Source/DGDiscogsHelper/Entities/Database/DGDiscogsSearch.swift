@@ -17,7 +17,6 @@ public final class DGDiscogsSearch {
     public final class Parameters {
         
         public var query,
-        type,
         title,
         releaseTitle,
         credit,
@@ -27,7 +26,6 @@ public final class DGDiscogsSearch {
         genre,
         style,
         country,
-        year,
         format,
         catNo,
         barcode,
@@ -35,10 +33,13 @@ public final class DGDiscogsSearch {
         submitter,
         contributor: String?
         
+        public var type: SearchType = SearchType.all
+        public var year: Int? = nil
+        
         var dictionary: [String : Any] {
             
             let dict: [String : String?] = ["query" : query,
-                                          "type" : type,
+                                            "type" : type == SearchType.all ? nil : type.rawValue,
                                           "title" : title,
                                           "release_title" : releaseTitle,
                                           "credit" : credit,
@@ -48,32 +49,13 @@ public final class DGDiscogsSearch {
                                           "genre" : genre,
                                           "style" : style,
                                           "country" : country,
-                                          "year" : year,
+                                          "year" : year != nil ? "\(String(describing: year!))" : nil,
                                           "format" : format,
                                           "catno" : catNo,
                                           "barcode" : barcode,
                                           "track" : track,
                                           "submitter" : submitter,
                                           "contributor" : contributor]
-            
-//            let dict : [String : Any?] = ["query" : query,
-//                                          "type" : type ?? "all",
-//                                          "title" : title,
-//                                          "release_title" : releaseTitle,
-//                                          "credit" : credit,
-//                                          "artist" : artist,
-//                                          "anv" : anv,
-//                                          "label" : label,
-//                                          "genre" : genre,
-//                                          "style" : style,
-//                                          "country" : country,
-//                                          "year" : year,
-//                                          "format" : format,
-//                                          "catno" : catNo,
-//                                          "barcode" : barcode,
-//                                          "track" : track,
-//                                          "submitter" : submitter,
-//                                          "contributor" : contributor]
             
             return DGDiscogsUtils.removeNilAndUnwrap(in: dict)
         }
@@ -87,6 +69,13 @@ public final class DGDiscogsSearch {
     
     public init(parameters: Parameters = Parameters()) {
         self.parameters = parameters
+    }
+    
+    public enum SearchType: String {
+        case all = "all"
+        case release = "release"
+        case master = "master"
+        case artist = "artist"
     }
 }
 
