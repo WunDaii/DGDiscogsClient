@@ -27,6 +27,7 @@ extension DGDiscogsUser.Wantlist {
     ///   - pagination: The pagination information for the request.
     ///   - completion: Called once the request has been completed.
     public func getWants(
+        sortedBy sort: DGDiscogsUtils.Sort? = nil,
         for pagination: DGDiscogsUtils.Pagination = DGDiscogsUtils.Pagination.defaultPagination,
         completion: @escaping DGDiscogsCompletionHandlers.userWantlistCompletionHandler)
     {
@@ -34,7 +35,11 @@ extension DGDiscogsUser.Wantlist {
             let url: URLConvertible = user.wantlistURL ?? dgResourceURL
             else { return }
         
-        let params = pagination.dictionary
+        var params = pagination.dictionary
+        
+        if let sortOrder = sort {
+            params += sortOrder.dictionary
+        }
         
         RequestHelper.sharedInstance.request(
             url: url,
