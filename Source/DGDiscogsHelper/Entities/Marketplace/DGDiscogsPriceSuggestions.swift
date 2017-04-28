@@ -15,13 +15,10 @@ public struct DGDiscogsPriceSuggestions {
     public struct Suggestion {
         
         public let currency: String?
-        public let currencySymbol: String?
         public let value: Double?
         
         init(json: JSON) {
-            let currency = json["currency"].string
-            self.currency = currency
-            self.currencySymbol = currency != nil ? Locale(identifier: currency!).currencySymbol : nil
+            self.currency = json["currency"].string
             self.value = json["value"].double
         }
     }
