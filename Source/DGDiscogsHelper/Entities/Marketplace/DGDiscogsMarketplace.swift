@@ -12,7 +12,7 @@ import Alamofire
 
 public struct DGDiscogsMarketplace {
     
-    static public func getPriceSuggestion(
+    static public func getPriceSuggestions(
         for release : DGDiscogsRelease,
         completion : @escaping DGDiscogsCompletionHandlers.priceSuggestionsCompletionHandler)
     {
@@ -25,6 +25,7 @@ public struct DGDiscogsMarketplace {
         RequestHelper.sharedInstance.request(
             url: url,
             method: .get,
+            authentication: true,
             completion: { (response, json, error) in
                 
                 if let error = error {
