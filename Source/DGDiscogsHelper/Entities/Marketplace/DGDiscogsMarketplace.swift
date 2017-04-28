@@ -20,7 +20,7 @@ public struct DGDiscogsMarketplace {
             let discogsId = release.discogsID
             else { return }
         
-        let url: URLConvertible = "/marketplace/price_suggestions/\(discogsId)"
+        let url: URLConvertible = "marketplace/price_suggestions/\(discogsId)"
 
         RequestHelper.sharedInstance.request(
             url: url,
