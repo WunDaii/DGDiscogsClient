@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8500F2021EB373C70068501F /* DGDiscogsMarketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8500F2001EB373660068501F /* DGDiscogsMarketplace.swift */; };
+		8500F2051EB377490068501F /* DGDiscogsPriceSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8500F2031EB375360068501F /* DGDiscogsPriceSuggestions.swift */; };
 		8509FE7D1E244CEB00C7CED7 /* DGDiscogsImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509FE751E21D3BD00C7CED7 /* DGDiscogsImages.swift */; };
 		OBJ_100 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* SessionDelegate.swift */; };
 		OBJ_101 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* SessionManager.swift */; };
@@ -80,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8500F2001EB373660068501F /* DGDiscogsMarketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGDiscogsMarketplace.swift; sourceTree = "<group>"; };
+		8500F2031EB375360068501F /* DGDiscogsPriceSuggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGDiscogsPriceSuggestions.swift; sourceTree = "<group>"; };
 		8509FE751E21D3BD00C7CED7 /* DGDiscogsImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGDiscogsImages.swift; sourceTree = "<group>"; };
 		OBJ_11 /* AFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 				OBJ_47 /* DGDiscogsListing.swift */,
 				OBJ_48 /* DGDiscogsOrder-Message.swift */,
 				OBJ_49 /* DGDiscogsOrder.swift */,
+				8500F2001EB373660068501F /* DGDiscogsMarketplace.swift */,
+				8500F2031EB375360068501F /* DGDiscogsPriceSuggestions.swift */,
 			);
 			path = Marketplace;
 			sourceTree = "<group>";
@@ -434,6 +440,8 @@
 				OBJ_128 /* DGDiscogsRelease.swift in Sources */,
 				OBJ_129 /* DGDiscogsSearch.swift in Sources */,
 				OBJ_130 /* DGDiscogsVideo.swift in Sources */,
+				8500F2051EB377490068501F /* DGDiscogsPriceSuggestions.swift in Sources */,
+				8500F2021EB373C70068501F /* DGDiscogsMarketplace.swift in Sources */,
 				OBJ_131 /* DGDiscogsListing-Condition.swift in Sources */,
 				OBJ_132 /* DGDiscogsListing.swift in Sources */,
 				OBJ_133 /* DGDiscogsOrder-Message.swift in Sources */,

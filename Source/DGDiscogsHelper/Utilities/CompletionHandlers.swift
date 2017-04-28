@@ -150,6 +150,11 @@ public final class DGDiscogsCompletionHandlers {
         case failure(error : Error?)
     }
     
+    public enum PriceSuggestionsResultType {
+        case success(priceSuggestions: DGDiscogsPriceSuggestions)
+        case failure(error : Error?)
+    }
+    
     // MARK: Completion Handlers
     
     public typealias infoCompletionHandler = (_ result: InfoResultType) -> Void
@@ -182,4 +187,5 @@ public final class DGDiscogsCompletionHandlers {
     
     public typealias orderUpdateCompletionHandler = (_ result: OrderUpdateResultType) -> Void
     public typealias orderMessagesCompletionHandler = (_ result: OrderMessagesResultType) -> Void
+    public typealias priceSuggestionsCompletionHandler = (_ result: PriceSuggestionsResultType) -> Void
 }
