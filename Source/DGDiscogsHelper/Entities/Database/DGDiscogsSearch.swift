@@ -40,22 +40,22 @@ public final class DGDiscogsSearch {
             
             let dict: [String : String?] = ["query" : query,
                                             "type" : type == SearchType.all ? nil : type.rawValue,
-                                          "title" : title,
-                                          "release_title" : releaseTitle,
-                                          "credit" : credit,
-                                          "artist" : artist,
-                                          "anv" : anv,
-                                          "label" : label,
-                                          "genre" : genre,
-                                          "style" : style,
-                                          "country" : country,
-                                          "year" : year != nil ? "\(String(describing: year!))" : nil,
-                                          "format" : format,
-                                          "catno" : catNo,
-                                          "barcode" : barcode,
-                                          "track" : track,
-                                          "submitter" : submitter,
-                                          "contributor" : contributor]
+                                            "title" : title,
+                                            "release_title" : releaseTitle,
+                                            "credit" : credit,
+                                            "artist" : artist,
+                                            "anv" : anv,
+                                            "label" : label,
+                                            "genre" : genre,
+                                            "style" : style,
+                                            "country" : country,
+                                            "year" : year != nil ? "\(String(describing: year!))" : nil,
+                                            "format" : format,
+                                            "catno" : catNo,
+                                            "barcode" : barcode,
+                                            "track" : track,
+                                            "submitter" : submitter,
+                                            "contributor" : contributor]
             
             return DGDiscogsUtils.removeNilAndUnwrap(in: dict)
         }
@@ -109,24 +109,29 @@ extension DGDiscogsSearch {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
-
-            
-            // TODO: Error handle
-            
-            guard let results = json["results"].array else { return }
-            
-            var items : [DGDiscogsItem] = []
-            
-            for result in results {
-                if let item = DGDiscogsItem.item(from: result) {
-                    items.append(item)
+                
+                
+                // TODO: Error handle
+                
+                guard let results = json["results"].array else {
+                    
+                    completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
+                    
+                    return
                 }
-            }
-            
-            let pagination = DGDiscogsUtils.Pagination(json: json["pagination"])
-            
-            completion(.success(pagination: pagination,
-                                results: items))
+                
+                var items : [DGDiscogsItem] = []
+                
+                for result in results {
+                    if let item = DGDiscogsItem.item(from: result) {
+                        items.append(item)
+                    }
+                }
+                
+                let pagination = DGDiscogsUtils.Pagination(json: json["pagination"])
+                
+                completion(.success(pagination: pagination,
+                                    results: items))
         })
         
     }
