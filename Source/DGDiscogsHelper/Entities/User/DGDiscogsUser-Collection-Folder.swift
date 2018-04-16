@@ -216,7 +216,7 @@ extension DGDiscogsUser.Collection.Folder {
             let url: URLConvertible = resourceURLConvertible()
             else { return }
         
-        guard count > 0 else {
+        guard count == 0 else {
             completion(.failure(error: DGDiscogsError.Folder.deleteNotEmpty))
             return
         }
