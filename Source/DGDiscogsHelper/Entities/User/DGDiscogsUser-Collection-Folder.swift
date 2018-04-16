@@ -157,7 +157,10 @@ extension DGDiscogsUser.Collection.Folder {
                 
                 let item = DGDiscogsUser.Collection.Item(json: json, folder: self, release: release)
                 self.count_ = self.count_ + 1
-                
+                if let currentAllFolderCount = DGDiscogsManager.sharedInstance.user.collection.allFolder?.count_ {
+                DGDiscogsManager.sharedInstance.user.collection.allFolder?.count_ = currentAllFolderCount + 1
+                }
+
                 completion(.success(item: item))
         })
     }
@@ -194,8 +197,12 @@ extension DGDiscogsUser.Collection.Folder {
                 }
 
                 self.count_ = self.count_ - 1
-                
+                if let currentAllFolderCount = DGDiscogsManager.sharedInstance.user.collection.allFolder?.count_ {
+                    DGDiscogsManager.sharedInstance.user.collection.allFolder?.count_ = currentAllFolderCount - 1
+                }
                 completion(.success())
         })
     }
+    
+    
 }

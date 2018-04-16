@@ -115,6 +115,10 @@ extension DGDiscogsUser.Collection.Item {
                     return
                 }
                 
+                if let currentFolderCount = self.folder?.count_,
+                    currentFolderCount > 0 {
+                    self.folder?.count_ = currentFolderCount - 1
+                }
                 self.folder = folder
                 folder.count_ = folder.count_ + 1
                 
