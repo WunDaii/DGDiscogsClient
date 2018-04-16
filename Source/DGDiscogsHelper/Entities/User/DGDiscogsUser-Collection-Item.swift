@@ -87,7 +87,7 @@ extension DGDiscogsUser.Collection.Item {
     }
     
     /// - Precondition: Authentication as the collection item owner is required.
-    public func moveFolder(
+    public func move(
         to folder: DGDiscogsUser.Collection.Folder,
         completion: @escaping DGDiscogsCompletionHandlers.editCompletionHandler) {
         
@@ -116,6 +116,7 @@ extension DGDiscogsUser.Collection.Item {
                 }
                 
                 self.folder = folder
+                folder.count_ = folder.count_ + 1
                 
                 completion(.success())
         })

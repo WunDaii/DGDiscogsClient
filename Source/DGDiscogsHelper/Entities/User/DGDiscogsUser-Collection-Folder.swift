@@ -17,7 +17,11 @@ extension DGDiscogsUser.Collection {
     public final class Folder: DGDiscogsItem, DGDiscogsAuthenticatedProtocol {
         
         /// The number of items (represented by Item) in the folder.
-        public let count: Int
+        public var count: Int {
+            return count_
+        }
+        
+        internal var count_: Int
         
         /// The name of the folder. Editable if authenticated as the folder's owner.
         public var name: String?
@@ -37,7 +41,7 @@ extension DGDiscogsUser.Collection {
         
         required public init(json: JSON, collection: DGDiscogsUser.Collection?) {
             
-            self.count = json["count"].intValue
+            self.count_ = json["count"].intValue
             self.name = json["name"].string
             self.collection = collection
             
@@ -152,6 +156,7 @@ extension DGDiscogsUser.Collection.Folder {
 
                 
                 let item = DGDiscogsUser.Collection.Item(json: json, folder: self, release: release)
+                self.count_ = self.count_ + 1
                 
                 completion(.success(item: item))
         })
@@ -188,6 +193,7 @@ extension DGDiscogsUser.Collection.Folder {
                     return
                 }
 
+                self.count_ = self.count_ - 1
                 
                 completion(.success())
         })
