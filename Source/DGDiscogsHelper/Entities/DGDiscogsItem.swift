@@ -61,7 +61,8 @@ public class DGDiscogsItem {
     ///
     /// - Parameter path: The path to add.
     /// - Returns: The final `URLConvertible` with the added `path`. This may be the full URL or simply the item's path.
-    func resourceURLConvertible(appending path: String) -> URLConvertible? {
+    func resourceURLConvertible(appending path: String? = nil) -> URLConvertible? {
+        guard let path = path else { return resourceURL }
         return resourceURL?.appendingPathComponent(path) ?? resourcePath?.appending("/" + path)
     }
     

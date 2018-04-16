@@ -204,5 +204,41 @@ extension DGDiscogsUser.Collection.Folder {
         })
     }
     
-    
+    /// Remove an instance of a release from a user’s collection folder.
+    ///
+    /// - Precondition: Authentication as the folder owner is required.
+    /// - Parameters:
+    ///   - item: The collection item to remove from the folder.
+    ///   - completion: Called once the request has been completed.
+    public func delete(
+        completion : @escaping DGDiscogsCompletionHandlers.deleteCompletionHandler) {
+        guard
+            let url: URLConvertible = resourceURLConvertible()
+            else { return }
+        
+        guard count > 0 else {
+            completion(.failure(error: DGDiscogsError.Folder.deleteNotEmpty))
+            return
+        }
+        
+        RequestHelper.sharedInstance.request(
+            url: url,
+            method: .delete,
+            parameters: nil,
+            
+            completion: { (response, json, error) in
+                
+                if let error = error {
+                    completion(.failure(error: error))
+                    return
+                }
+                
+                guard let _ = json else {
+                    completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
+                    return
+                }
+                
+                completion(.success())
+        })
+    }
 }

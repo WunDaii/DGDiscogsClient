@@ -10,6 +10,12 @@ import Foundation
 
 import SwiftyJSON
 
+public enum DGDiscogsError: Error {
+    public enum Folder: Error {
+        case deleteNotEmpty
+    }
+}
+
 public struct DGDiscogsUtils {
     
     public struct Price {
