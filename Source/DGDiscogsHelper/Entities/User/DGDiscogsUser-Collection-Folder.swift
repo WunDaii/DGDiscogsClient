@@ -183,7 +183,7 @@ extension DGDiscogsUser.Collection.Folder {
                     return
                 }
                 
-                guard let json = json else {
+                guard let _ = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }

@@ -449,7 +449,7 @@ public extension DGDiscogsUser {
                     return
                 }
                 
-                guard let json = json else {
+                guard json != nil else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }

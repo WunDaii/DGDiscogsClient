@@ -52,9 +52,7 @@ class RequestHelper {
         if let urlString = url as? String, !urlString.contains(RequestHelper.baseURL.absoluteString) {
             url = RequestHelper.baseURL.appendingPathComponent(urlString)
         }
-        
-        let expectingStatusCode_ = expectingStatusCode ?? getStatusCode(forMethod: method)
-        
+                
         if let parameters = parameters {
             print("Parameters > \(parameters)")
         }
@@ -71,10 +69,10 @@ class RequestHelper {
                     return }
             
             print("*** GOT RESULT ***")
-            print("*** Request > \(response.request)")  // original URL request
-            print("*** Response > \(response.response)") // HTTP URL response
-            print("*** Status Code > \(response.response?.statusCode)")  // original URL request
-            print("*** Data > \(response.data)")     // server data
+            print("*** Request > \(String(describing: response.request))")  // original URL request
+            print("*** Response > \(String(describing: response.response))") // HTTP URL response
+            print("*** Status Code > \(String(describing: response.response?.statusCode))")  // original URL request
+            print("*** Data > \(String(describing: response.data))")     // server data
             print("*** Result > \(response.result)")   // result of response serialization
             
             switch response.result {
@@ -88,7 +86,7 @@ class RequestHelper {
                 
             case .failure(let error):
                 print("Request failed with error: \(error)")
-                print("Response headers: \(response.response?.allHeaderFields)")
+                print("Response headers: \(String(describing: response.response?.allHeaderFields))")
                 
                 completion(httpResponse, nil, error)
                 
@@ -98,9 +96,7 @@ class RequestHelper {
     }
     
     func responseError(_ response: DataResponse<Any>) {
-        var statusCode = response.response?.statusCode
         if let error = response.result.error as? AFError {
-            statusCode = error._code // statusCode private
             switch error {
             case .invalidURL(let url):
                 print("Invalid URL: \(url) - \(error.localizedDescription)")
@@ -123,7 +119,6 @@ class RequestHelper {
                     print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
                 case .unacceptableStatusCode(let code):
                     print("Response status code was unacceptable: \(code)")
-                    statusCode = code
                 }
             case .responseSerializationFailed(let reason):
                 print("Response serialization failed: \(error.localizedDescription)")
@@ -131,11 +126,11 @@ class RequestHelper {
                 // statusCode = 3840 ???? maybe..
             }
             
-            print("Underlying error: \(error.underlyingError)")
+            print("Underlying error: \(String(describing: error.underlyingError))")
         } else if let error = response.result.error as? URLError {
             print("URLError occurred: \(error)")
         } else {
-            print("Unknown error: \(response.result.error)")
+            print("Unknown error: \(String(describing: response.result.error))")
         }
     }
 }

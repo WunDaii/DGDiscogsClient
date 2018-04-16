@@ -8,8 +8,8 @@ target 'DGDiscogsHelper' do
 
   # Pods for DGDiscogsHelper
 
- 	pod 'Alamofire', '~> 4.0'
- 	pod 'SwiftyJSON'
+    pod 'Alamofire', '~> 4.7'
+    pod 'SwiftyJSON', '~> 4.0'
 
   target 'DGDiscogsHelperTests' do
     inherit! :search_paths

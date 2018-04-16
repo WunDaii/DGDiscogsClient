@@ -147,7 +147,7 @@ extension DGDiscogsListing {
                     return
                 }
                 
-                guard let json = json else {
+                guard json != nil else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
@@ -182,7 +182,7 @@ extension DGDiscogsListing {
                     return
                 }
                 
-                guard let json = json else {
+                guard let _ = json else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
@@ -211,7 +211,7 @@ extension DGDiscogsListing {
                     return
                 }
                 
-                guard let json = json else {
+                guard json != nil else {
                     completion(.failure(error: NSError(domain: "DGDiscogsClient", code: 500, userInfo: nil)))
                     return
                 }
