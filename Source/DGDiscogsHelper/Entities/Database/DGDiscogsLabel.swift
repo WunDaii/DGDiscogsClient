@@ -38,7 +38,7 @@ public final class DGDiscogsLabel : DGDiscogsItem {
         self.name = json["name"].string ?? ""
         self.entityType = json["entity_type"].int ?? 0
         self.entityTypeName = json["entity_type_name"].string ?? ""
-        self.catNo = json["catNo"].string ?? ""
+        self.catNo = json["catno"].string ?? ""
         self.profile = json["profile"].string
         self.releasesURL = URL(string:json["releases_url"].string ?? "")
         self.sublabels = DGDiscogsLabel.items(from: json["sublabels"].array)
