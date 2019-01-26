@@ -38,7 +38,7 @@ public final class DGDiscogsSearch {
         
         var dictionary: [String : Any] {
             
-            let dict: [String : String?] = ["query" : query,
+            let dict: [String : String?] = ["q" : query,
                                             "type" : type == SearchType.all ? nil : type.rawValue,
                                             "title" : title,
                                             "release_title" : releaseTitle,
